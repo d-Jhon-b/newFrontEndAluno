@@ -1,0 +1,198 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ===== NAVEGAÇÃO DE MESES ===== */
+.mesNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.mesTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: capitalize;
+  letter-spacing: -0.3px;
+}
+
+.navBtn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+
+.navBtn:hover {
+  background: var(--color-surface-2);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ===== LEGENDA ===== */
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.legendaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.legendaDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===== LISTA ===== */
+.lista {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-bottom: calc(var(--spacing-xl) + env(safe-area-inset-bottom));
+}
+
+/* ===== EVENTO CARD ===== */
+.eventoCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  transition: background var(--transition);
+  animation: fadeUp 0.3s ease both;
+  border-left: 3px solid var(--cor, var(--color-primary));
+}
+
+.eventoCard:hover { background: var(--color-surface-2); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.eventoData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 36px;
+  flex-shrink: 0;
+}
+
+.eventoDia {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--cor, var(--color-primary));
+  line-height: 1;
+}
+
+.eventoSem {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+  margin-top: 2px;
+}
+
+.eventoInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eventoTitulo {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.4;
+}
+
+.eventoBadge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--cor, var(--color-primary));
+  background: var(--bg, rgba(196,28,52,0.12));
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.eventoDesc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.eventoFim {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* ===== ESTADOS ===== */
+.skeleton {
+  height: 72px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  animation: shimmer 1.5s ease infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-2xl);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.emptyState p { font-size: 14px; font-weight: 500; }
+
+.errorState {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  color: #f87171;
+  font-size: 13px;
+  text-align: center;
+}
