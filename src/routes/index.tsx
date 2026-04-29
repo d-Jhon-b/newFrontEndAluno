@@ -40,12 +40,24 @@ export default function AppRouter() {
 
   return (
     <Routes>
-      <Route
+      <Route path="/login" element={<LoginPage />} />
+
+      
+      <Route path="/" element={<AppShell />}>
+        <Route index element={<HomePage />} />
+        <Route path="carteirinha" element={<CarteirinhaPage />} />
+        <Route path="horarios" element={<HorariosPage />} />
+        <Route path="calendario" element={<CalendarioPage />} />
+      </Route>
+
+      <Route path="*" element={<Navigate to="/" replace />} />
+
+      {/* <Route
         path="/login"
         // <LoginPage></LoginPage>
-        // element={isAuthenticated ? <Navigate to="/" replace /> : <LoginPage />}
-        element={<LoginPage/>}
-      />
+        element={isAuthenticated ? <Navigate to="/" replace /> : <LoginPage />}
+
+        />
       <Route
         path="/"
         element={
@@ -59,7 +71,7 @@ export default function AppRouter() {
         <Route path="horarios" element={<HorariosPage />} />
         <Route path="calendario" element={<CalendarioPage />} />
       </Route>
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} /> */}
     </Routes>
   )
 }
